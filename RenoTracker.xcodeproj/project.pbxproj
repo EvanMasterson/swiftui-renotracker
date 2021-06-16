@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE84A0CA26816C13006A6F4D /* RenovationProjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84A0C926816C12006A6F4D /* RenovationProjectRow.swift */; };
 		CE876864267772CD0045606B /* RenoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE876863267772CD0045606B /* RenoTrackerApp.swift */; };
-		CE876866267772CD0045606B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE876865267772CD0045606B /* ContentView.swift */; };
+		CE876866267772CD0045606B /* RenovationProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE876865267772CD0045606B /* RenovationProjectsView.swift */; };
 		CE876868267772CE0045606B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE876867267772CE0045606B /* Assets.xcassets */; };
 		CE87686B267772CE0045606B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE87686A267772CE0045606B /* Preview Assets.xcassets */; };
+		CEBAD28E267A16E4003C4B48 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD28D267A16E4003C4B48 /* DetailView.swift */; };
+		CEBAD290267A170C003C4B48 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD28F267A170C003C4B48 /* EditView.swift */; };
+		CEBAD292267A173F003C4B48 /* InspectionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD291267A173F003C4B48 /* InspectionLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE84A0C926816C12006A6F4D /* RenovationProjectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenovationProjectRow.swift; sourceTree = "<group>"; };
 		CE876860267772CD0045606B /* RenoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE876863267772CD0045606B /* RenoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenoTrackerApp.swift; sourceTree = "<group>"; };
-		CE876865267772CD0045606B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE876865267772CD0045606B /* RenovationProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenovationProjectsView.swift; sourceTree = "<group>"; };
 		CE876867267772CE0045606B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE87686A267772CE0045606B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE87686C267772CE0045606B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBAD28D267A16E4003C4B48 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CEBAD28F267A170C003C4B48 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		CEBAD291267A173F003C4B48 /* InspectionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionLogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				CE876863267772CD0045606B /* RenoTrackerApp.swift */,
-				CE876865267772CD0045606B /* ContentView.swift */,
+				CE876865267772CD0045606B /* RenovationProjectsView.swift */,
+				CE84A0C926816C12006A6F4D /* RenovationProjectRow.swift */,
+				CEBAD28D267A16E4003C4B48 /* DetailView.swift */,
+				CEBAD28F267A170C003C4B48 /* EditView.swift */,
+				CEBAD291267A173F003C4B48 /* InspectionLogView.swift */,
 				CE876867267772CE0045606B /* Assets.xcassets */,
 				CE87686C267772CE0045606B /* Info.plist */,
 				CE876869267772CE0045606B /* Preview Content */,
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE876866267772CD0045606B /* ContentView.swift in Sources */,
+				CE876866267772CD0045606B /* RenovationProjectsView.swift in Sources */,
+				CEBAD28E267A16E4003C4B48 /* DetailView.swift in Sources */,
+				CEBAD292267A173F003C4B48 /* InspectionLogView.swift in Sources */,
+				CEBAD290267A170C003C4B48 /* EditView.swift in Sources */,
 				CE876864267772CD0045606B /* RenoTrackerApp.swift in Sources */,
+				CE84A0CA26816C13006A6F4D /* RenovationProjectRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
