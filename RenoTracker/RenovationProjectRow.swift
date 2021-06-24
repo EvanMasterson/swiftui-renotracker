@@ -2,24 +2,27 @@
 import SwiftUI
 
 struct RenovationProjectRow: View {
+    var renovationProject: RenovationProject
     
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image("front-lobby")
+                Image(renovationProject.imageName)
                     .resizable()
                     .frame(width: 100, height: 100)
                     .aspectRatio(contentMode: .fill)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 VStack(alignment: .leading) {
-                    Text("Front Lobby")
+                    Text(renovationProject.renovationArea)
                         .font(.headline)
                     VStack(alignment: .leading) {
-                        Label("Due on Aug 1, 2021", systemImage: "calendar")
-                        Label("5 items", systemImage: "wrench.and.screwdriver.fill")
-                        Label("60% complete", systemImage: "percent")
-                        Label("On budget", systemImage: "dollarsign.circle")
+                        Label("Due on \(renovationProject.formattedDueDate)", systemImage: "calendar")
+                            .foregroundColor(renovationProject.dueDate < Date() ? .red : .accentColor)
+                        Label("\(renovationProject.totalPunchListItems) items", systemImage: "wrench.and.screwdriver.fill")
+                        Label("\(renovationProject.formattedPercentComplete) complete", systemImage: "percent")
+                        Label("\(renovationProject.budgetAmountRemaining < 0 ? "Over budget" : "On budget")", systemImage: "dollarsign.circle")
+                            .foregroundColor(renovationProject.budgetAmountRemaining < 0 ? .red : .accentColor)
                     }
                     .font(.callout)
                     .foregroundColor(.accentColor)
@@ -35,9 +38,9 @@ struct RenovationProjectRow: View {
 struct RenovationProjectRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RenovationProjectRow()
+            RenovationProjectRow(renovationProject: RenovationProject.testData[0])
                 .previewLayout(.fixed(width: 400, height: 100))
-            RenovationProjectRow()
+            RenovationProjectRow(renovationProject: RenovationProject.testData[0])
                 .preferredColorScheme(.dark)
                 .previewLayout(.fixed(width: 400, height: 100))
         }
