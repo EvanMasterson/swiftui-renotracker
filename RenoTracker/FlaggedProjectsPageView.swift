@@ -12,9 +12,23 @@ struct FlaggedProjectsPageView: View {
     }
     
     var body: some View {
-        //TODO: Render a UIPageViewController to display the flaggedProjectCards in
-        flaggedProjectCards.first
+        PageViewController()
     }
+}
+
+struct PageViewController: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> UIPageViewController {
+        UIPageViewController(
+            transitionStyle: .scroll,
+            navigationOrientation: .horizontal,
+            options: nil)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIPageViewController, context: Context) {
+        // TODO: Implement updateUIViewController method
+    }
+    
+    typealias UIViewControllerType = UIPageViewController
 }
 
 struct FlaggedProjectPageView_Previews: PreviewProvider {
