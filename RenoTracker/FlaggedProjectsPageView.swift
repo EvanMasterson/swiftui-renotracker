@@ -12,11 +12,13 @@ struct FlaggedProjectsPageView: View {
     }
     
     var body: some View {
-        PageViewController()
+        PageViewController(flaggedProjectCards: flaggedProjectCards)
     }
 }
 
 struct PageViewController: UIViewControllerRepresentable {
+    let flaggedProjectCards: [FlaggedProjectCard]
+    
     func makeUIViewController(context: Context) -> UIPageViewController {
         UIPageViewController(
             transitionStyle: .scroll,
@@ -25,7 +27,9 @@ struct PageViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIPageViewController, context: Context) {
-        // TODO: Implement updateUIViewController method
+        let flaggedProjectCardHostingController = UIHostingController(rootView: flaggedProjectCards[0])
+        
+        uiViewController.setViewControllers([flaggedProjectCardHostingController], direction: .forward, animated: true, completion: nil)
     }
     
     typealias UIViewControllerType = UIPageViewController
