@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE07CCF3269377390070C653 /* FlaggedProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07CCF2269377390070C653 /* FlaggedProjectCard.swift */; };
 		CE0E8DE3268420D90061569D /* projects.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0E8DE2268420D90061569D /* projects.json */; };
 		CE0E8DE526842B4A0061569D /* RenovationProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E8DE426842B4A0061569D /* RenovationProject.swift */; };
 		CE0E8DE7268555D40061569D /* RenovationProjectDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E8DE6268555D40061569D /* RenovationProjectDataManager.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE07CCF2269377390070C653 /* FlaggedProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaggedProjectCard.swift; sourceTree = "<group>"; };
 		CE0E8DE2268420D90061569D /* projects.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = projects.json; sourceTree = "<group>"; };
 		CE0E8DE426842B4A0061569D /* RenovationProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenovationProject.swift; sourceTree = "<group>"; };
 		CE0E8DE6268555D40061569D /* RenovationProjectDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenovationProjectDataManager.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				CEBAD291267A173F003C4B48 /* InspectionLogView.swift */,
 				CEAAAA9F26896B5D0031C294 /* Snowflake.swift */,
 				CEC94D72268D664A003F940D /* ProjectProgressView.swift */,
+				CE07CCF2269377390070C653 /* FlaggedProjectCard.swift */,
 				CE0E8DE1268420AD0061569D /* Models */,
 				CE876867267772CE0045606B /* Assets.xcassets */,
 				CE87686C267772CE0045606B /* Info.plist */,
@@ -187,6 +190,7 @@
 				CE876866267772CD0045606B /* RenovationProjectsView.swift in Sources */,
 				CEADA8062685695C0004A743 /* RenovationProject + SwiftUI.swift in Sources */,
 				CEBAD28E267A16E4003C4B48 /* DetailView.swift in Sources */,
+				CE07CCF3269377390070C653 /* FlaggedProjectCard.swift in Sources */,
 				CEC94D73268D664A003F940D /* ProjectProgressView.swift in Sources */,
 				CEBAD292267A173F003C4B48 /* InspectionLogView.swift in Sources */,
 				CEBAD290267A170C003C4B48 /* EditView.swift in Sources */,
