@@ -93,7 +93,7 @@ extension RenovationProject {
                               budgetAmountAllocated: 15000,
                               budgetSpentToDate: 18350.0,
                               inspectionLog: [
-                                InspectionLogEntry(entryDate: Date().advanced(by: -1), details: "Test entry 1"), InspectionLogEntry(entryDate: Date(), details: "Test entry 2")])
+                                InspectionLogEntry(entryDate: Date().advanced(by: -86400), details: "Test entry 1"), InspectionLogEntry(entryDate: Date(), details: "Test entry 2")])
             ,
             RenovationProject(projectNumber: 2021002,
                               renovationArea: "Main Entrance",

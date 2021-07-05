@@ -15,11 +15,14 @@
 		CE876866267772CD0045606B /* RenovationProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE876865267772CD0045606B /* RenovationProjectsView.swift */; };
 		CE876868267772CE0045606B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE876867267772CE0045606B /* Assets.xcassets */; };
 		CE87686B267772CE0045606B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE87686A267772CE0045606B /* Preview Assets.xcassets */; };
+		CEAAAAA026896B5D0031C294 /* Snowflake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAAA9F26896B5D0031C294 /* Snowflake.swift */; };
 		CEADA8062685695C0004A743 /* RenovationProject + SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA8052685695C0004A743 /* RenovationProject + SwiftUI.swift */; };
 		CEADA808268572A50004A743 /* PunchListItem + SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA807268572A50004A743 /* PunchListItem + SwiftUI.swift */; };
 		CEBAD28E267A16E4003C4B48 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD28D267A16E4003C4B48 /* DetailView.swift */; };
 		CEBAD290267A170C003C4B48 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD28F267A170C003C4B48 /* EditView.swift */; };
 		CEBAD292267A173F003C4B48 /* InspectionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAD291267A173F003C4B48 /* InspectionLogView.swift */; };
+		CEC94D73268D664A003F940D /* ProjectProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC94D72268D664A003F940D /* ProjectProgressView.swift */; };
+		CECC2A4F268F6E4000D0755C /* InspectionLog + SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC2A4E268F6E4000D0755C /* InspectionLog + SwiftUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +36,14 @@
 		CE876867267772CE0045606B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE87686A267772CE0045606B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE87686C267772CE0045606B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEAAAA9F26896B5D0031C294 /* Snowflake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Snowflake.swift; path = Models/Snowflake.swift; sourceTree = "<group>"; };
 		CEADA8052685695C0004A743 /* RenovationProject + SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RenovationProject + SwiftUI.swift"; sourceTree = "<group>"; };
 		CEADA807268572A50004A743 /* PunchListItem + SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PunchListItem + SwiftUI.swift"; sourceTree = "<group>"; };
 		CEBAD28D267A16E4003C4B48 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CEBAD28F267A170C003C4B48 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEBAD291267A173F003C4B48 /* InspectionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionLogView.swift; sourceTree = "<group>"; };
+		CEC94D72268D664A003F940D /* ProjectProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectProgressView.swift; sourceTree = "<group>"; };
+		CECC2A4E268F6E4000D0755C /* InspectionLog + SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectionLog + SwiftUI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			children = (
 				CE0E8DE426842B4A0061569D /* RenovationProject.swift */,
 				CEADA8052685695C0004A743 /* RenovationProject + SwiftUI.swift */,
+				CECC2A4E268F6E4000D0755C /* InspectionLog + SwiftUI.swift */,
 				CEADA807268572A50004A743 /* PunchListItem + SwiftUI.swift */,
 				CE0E8DE6268555D40061569D /* RenovationProjectDataManager.swift */,
 				CE0E8DE2268420D90061569D /* projects.json */,
@@ -88,6 +95,8 @@
 				CEBAD28D267A16E4003C4B48 /* DetailView.swift */,
 				CEBAD28F267A170C003C4B48 /* EditView.swift */,
 				CEBAD291267A173F003C4B48 /* InspectionLogView.swift */,
+				CEAAAA9F26896B5D0031C294 /* Snowflake.swift */,
+				CEC94D72268D664A003F940D /* ProjectProgressView.swift */,
 				CE0E8DE1268420AD0061569D /* Models */,
 				CE876867267772CE0045606B /* Assets.xcassets */,
 				CE87686C267772CE0045606B /* Info.plist */,
@@ -174,14 +183,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECC2A4F268F6E4000D0755C /* InspectionLog + SwiftUI.swift in Sources */,
 				CE876866267772CD0045606B /* RenovationProjectsView.swift in Sources */,
 				CEADA8062685695C0004A743 /* RenovationProject + SwiftUI.swift in Sources */,
 				CEBAD28E267A16E4003C4B48 /* DetailView.swift in Sources */,
+				CEC94D73268D664A003F940D /* ProjectProgressView.swift in Sources */,
 				CEBAD292267A173F003C4B48 /* InspectionLogView.swift in Sources */,
 				CEBAD290267A170C003C4B48 /* EditView.swift in Sources */,
 				CE0E8DE526842B4A0061569D /* RenovationProject.swift in Sources */,
 				CE876864267772CD0045606B /* RenoTrackerApp.swift in Sources */,
 				CEADA808268572A50004A743 /* PunchListItem + SwiftUI.swift in Sources */,
+				CEAAAAA026896B5D0031C294 /* Snowflake.swift in Sources */,
 				CE0E8DE7268555D40061569D /* RenovationProjectDataManager.swift in Sources */,
 				CE84A0CA26816C13006A6F4D /* RenovationProjectRow.swift in Sources */,
 			);
