@@ -14,8 +14,8 @@ struct FlaggedProjectsPageView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            PageViewController(flaggedProjectCards: flaggedProjectCards, currentPage: $currentPage)
-            PageControl(numberOfPages: flaggedProjectCards.count, currentPage: $currentPage)
+            PageViewController(flaggedProjectCards: flaggedProjectCards, currentPage: $currentPage).id(UUID())
+            PageControl(numberOfPages: flaggedProjectCards.count, currentPage: $currentPage).id(UUID())
                 // 10 points of width for the dot, and 8 points extra as a buffer
                 .frame(width: (10 + 8) * CGFloat(flaggedProjectCards.count))
                 .padding([.bottom, .trailing], 5)

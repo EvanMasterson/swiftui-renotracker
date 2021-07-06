@@ -3,10 +3,20 @@ import SwiftUI
 
 struct RenovationProjectsView: View {
     @Binding var renovationProjects: [RenovationProject]
+    var flaggedProjects: [RenovationProject] {
+        renovationProjects.filter { renovationProject in
+            renovationProject.isFlagged == true
+        }
+    }
     
     var body: some View {
         NavigationView {
             List {
+                if flaggedProjects.count > 0 {
+                    FlaggedProjectsPageView(flaggedProjects: flaggedProjects)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+                
                 ForEach(renovationProjects) { renovationProject in
                     let projectIndex = renovationProjects.firstIndex(where: { $0.id == renovationProject.id })!
                     
