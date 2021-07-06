@@ -47,20 +47,45 @@ struct PageViewController: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, UIPageViewControllerDataSource {
         let representableToCoordinate: PageViewController
-
+        
+        let hostingControllers: [UIHostingController<FlaggedProjectCard>]
+        
         internal init(representableToCoordinate: PageViewController) {
             self.representableToCoordinate = representableToCoordinate
+            
+            // Map over the array of flagged project cards and return a FlaggedProjectCard wrapped in a UIHostingController for each element.
+            self.hostingControllers = representableToCoordinate.flaggedProjectCards.map { flaggedProjectCard in
+                UIHostingController(rootView: flaggedProjectCard)
+            }
         }
         
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-            <#code#>
+            
+            // Look up the reference of the viewController (the UIHostingController wrapping the FlaggedProjectCard that's currently displayed in the UIPageViewController) inside the array of all hostingControllers that the UIPageViewController could be aware of.
+            guard let index = (hostingControllers as [UIViewController]).firstIndex(of: viewController) else { return nil}
+            
+            // If this is the first card in the array of hostingControllers and the person were to swipe to go "before"... use the last card in the array of hosting controllers as the "viewControllerBefore"
+            if index == 0 {
+                return hostingControllers.last
+            }
+            
+            // Otherwise, use the card at the index immediately prior to the one currently being shown as the "viewControllerBefore"
+            return hostingControllers[index - 1]
         }
         
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            <#code#>
+            
+            // Look up the reference of the viewController (the UIHostingController wrapping the FlaggedProjectCard that's currently displayed in the UIPageViewController) inside the array of all hostingControllers that the UIPageViewController could be aware of.
+            guard let index = (hostingControllers as [UIViewController]).firstIndex(of: viewController) else { return nil}
+            
+            // If this is the last card in the array of hostingControllers and the person were to swipe to go "after"... use the first card in the array of hosting controllers as the "viewControllerAfter"
+            if index + 1 == hostingControllers.count {
+                return hostingControllers.first
+            }
+            
+            // Otherwise, use the card at the index immediately after the one currently being shown as the "viewControllerAfter"
+            return hostingControllers[index + 1]
         }
-        
-
     }
     
     typealias UIViewControllerType = UIPageViewController
