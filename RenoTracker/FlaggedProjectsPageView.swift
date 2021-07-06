@@ -12,7 +12,14 @@ struct FlaggedProjectsPageView: View {
     }
     
     var body: some View {
-        PageViewController(flaggedProjectCards: flaggedProjectCards)
+        ZStack(alignment: .bottomTrailing) {
+            PageViewController(flaggedProjectCards: flaggedProjectCards)
+            PageControl(numberOfPages: flaggedProjectCards.count, currentPage: 0)
+                // 10 points of width for the dot, and 8 points extra as a buffer
+                .frame(width: (10 + 8) * CGFloat(flaggedProjectCards.count))
+                .padding([.bottom, .trailing], 5)
+        }
+        .aspectRatio(3 / 2, contentMode: .fit)
     }
 }
 
@@ -33,6 +40,26 @@ struct PageViewController: UIViewControllerRepresentable {
     }
     
     typealias UIViewControllerType = UIPageViewController
+}
+
+struct PageControl: UIViewRepresentable {
+    let numberOfPages: Int
+    let currentPage: Int
+    
+    func makeUIView(context: Context) -> UIPageControl {
+        let control = UIPageControl()
+        control.numberOfPages = numberOfPages
+        
+        return control
+    }
+    
+    func updateUIView(_ uiView: UIPageControl, context: Context) {
+        uiView.currentPage = currentPage
+    }
+    
+    typealias UIViewType = UIPageControl
+    
+    
 }
 
 struct FlaggedProjectPageView_Previews: PreviewProvider {
