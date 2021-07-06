@@ -41,6 +41,28 @@ struct PageViewController: UIViewControllerRepresentable {
         uiViewController.setViewControllers([flaggedProjectCardHostingController], direction: .forward, animated: true, completion: nil)
     }
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator(representableToCoordinate: self)
+    }
+    
+    class Coordinator: NSObject, UIPageViewControllerDataSource {
+        let representableToCoordinate: PageViewController
+
+        internal init(representableToCoordinate: PageViewController) {
+            self.representableToCoordinate = representableToCoordinate
+        }
+        
+        func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+            <#code#>
+        }
+        
+        func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+            <#code#>
+        }
+        
+
+    }
+    
     typealias UIViewControllerType = UIPageViewController
 }
 
