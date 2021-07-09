@@ -120,9 +120,19 @@ struct PageControl: UIViewRepresentable {
         uiView.currentPage = currentPage
     }
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator(representableToCoordinate: self)
+    }
+    
     typealias UIViewType = UIPageControl
     
-    
+    class Coordinator {
+        let representableToCoordinate: PageControl
+        
+        internal init(representableToCoordinate: PageControl) {
+            self.representableToCoordinate = representableToCoordinate
+        }
+    }
 }
 
 struct FlaggedProjectPageView_Previews: PreviewProvider {
