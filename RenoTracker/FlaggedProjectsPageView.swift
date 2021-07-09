@@ -3,6 +3,7 @@ import SwiftUI
 
 struct FlaggedProjectsPageView: View {
     let flaggedProjects: [RenovationProject]
+    @State private var currentPage = 0
     
     // Map over the array of flagged renovation projects and return a FlaggedProjectCard instance for each element.
     var flaggedProjectCards: [FlaggedProjectCard] {
@@ -13,8 +14,8 @@ struct FlaggedProjectsPageView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            PageViewController(flaggedProjectCards: flaggedProjectCards)
-            PageControl(numberOfPages: flaggedProjectCards.count, currentPage: 0)
+            PageViewController(flaggedProjectCards: flaggedProjectCards, currentPage: $currentPage)
+            PageControl(numberOfPages: flaggedProjectCards.count, currentPage: $currentPage)
                 // 10 points of width for the dot, and 8 points extra as a buffer
                 .frame(width: (10 + 8) * CGFloat(flaggedProjectCards.count))
                 .padding([.bottom, .trailing], 5)
@@ -25,6 +26,7 @@ struct FlaggedProjectsPageView: View {
 
 struct PageViewController: UIViewControllerRepresentable {
     let flaggedProjectCards: [FlaggedProjectCard]
+    @Binding var currentPage: Int
     
     func makeUIViewController(context: Context) -> UIPageViewController {
         UIPageViewController(
@@ -34,7 +36,7 @@ struct PageViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIPageViewController, context: Context) {
-        let flaggedProjectCardHostingController = UIHostingController(rootView: flaggedProjectCards[0])
+        let flaggedProjectCardHostingController = UIHostingController(rootView: flaggedProjectCards[currentPage])
         
         uiViewController.setViewControllers([flaggedProjectCardHostingController], direction: .forward, animated: true, completion: nil)
     }
@@ -44,7 +46,7 @@ struct PageViewController: UIViewControllerRepresentable {
 
 struct PageControl: UIViewRepresentable {
     let numberOfPages: Int
-    let currentPage: Int
+    @Binding var currentPage: Int
     
     func makeUIView(context: Context) -> UIPageControl {
         let control = UIPageControl()
