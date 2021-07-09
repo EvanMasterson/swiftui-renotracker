@@ -45,7 +45,7 @@ struct PageViewController: UIViewControllerRepresentable {
         Coordinator(representableToCoordinate: self)
     }
     
-    class Coordinator: NSObject, UIPageViewControllerDataSource {
+    class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
         let representableToCoordinate: PageViewController
         
         let hostingControllers: [UIHostingController<FlaggedProjectCard>]
@@ -86,9 +86,18 @@ struct PageViewController: UIViewControllerRepresentable {
             // Otherwise, use the card at the index immediately after the one currently being shown as the "viewControllerAfter"
             return hostingControllers[index + 1]
         }
+        
+        func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            if completed,
+               let visibleViewController = pageViewController.viewControllers?.first,
+               let index = (hostingControllers as [UIViewController]).firstIndex(of: visibleViewController) {
+                
+                representableToCoordinate.currentPage = index
+            }
+        }
+        
+        typealias UIViewControllerType = UIPageViewController
     }
-    
-    typealias UIViewControllerType = UIPageViewController
 }
 
 struct PageControl: UIViewRepresentable {
