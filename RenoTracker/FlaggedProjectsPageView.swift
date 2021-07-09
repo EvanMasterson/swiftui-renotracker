@@ -113,6 +113,8 @@ struct PageControl: UIViewRepresentable {
         let control = UIPageControl()
         control.numberOfPages = numberOfPages
         
+        control.addTarget(context.coordinator, action: #selector(Coordinator.updateCurrentPage(sender:)), for: .valueChanged)
+        
         return control
     }
     
@@ -131,6 +133,10 @@ struct PageControl: UIViewRepresentable {
         
         internal init(representableToCoordinate: PageControl) {
             self.representableToCoordinate = representableToCoordinate
+        }
+        
+        @objc func updateCurrentPage(sender: UIPageControl) {
+            representableToCoordinate.currentPage = sender.currentPage
         }
     }
 }
