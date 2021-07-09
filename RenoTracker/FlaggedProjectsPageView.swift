@@ -29,14 +29,19 @@ struct PageViewController: UIViewControllerRepresentable {
     @Binding var currentPage: Int
     
     func makeUIViewController(context: Context) -> UIPageViewController {
-        UIPageViewController(
+        let controller = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
             options: nil)
+        
+        controller.dataSource = context.coordinator
+        controller.delegate = context.coordinator
+        
+        return controller
     }
     
     func updateUIViewController(_ uiViewController: UIPageViewController, context: Context) {
-        let flaggedProjectCardHostingController = UIHostingController(rootView: flaggedProjectCards[currentPage])
+        let flaggedProjectCardHostingController = context.coordinator.hostingControllers[currentPage]
         
         uiViewController.setViewControllers([flaggedProjectCardHostingController], direction: .forward, animated: true, completion: nil)
     }
